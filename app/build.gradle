@@ -10,16 +10,24 @@ android {
         targetSdkVersion 22
         versionCode 1
         versionName "1.0"
+
+        resValue "string", "GOOGLE_ANALYTICS_API_KEY", MobileAnalyticsSampleAPIKey
+        resValue "string", "TAG_MANAGER_DAILY_DEALS_CONTAINER_ID", MobileAnalyticsSampleDailyDealsContainerID
     }
+
     buildTypes {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+
 }
 
 dependencies {
-    compile fileTree(dir: 'libs', include: ['*.jar'])
+    compile fileTree(include: ['*.jar'], dir: 'libs')
     compile 'com.android.support:appcompat-v7:22.2.0'
+    compile 'com.google.code.gson:gson:2.3'
+    compile 'com.android.support:recyclerview-v7:22.2.0'
+    compile 'com.google.android.gms:play-services-analytics:7.5.0'
 }
